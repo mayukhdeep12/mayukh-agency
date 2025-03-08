@@ -1,0 +1,104 @@
+// components/Skills.module.scss
+
+@use '@/base' as *;
+
+.marquee {
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+.testimonialRow {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  animation: scroll-left 30s linear infinite;
+}
+
+.testimonialCard {
+  flex-shrink: 0;
+  width: 300px;
+  border: 1px solid rgb(255 255 255 / 20%);
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgb(255 255 255 / 5%);
+  backdrop-filter: blur(10px);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgb(0 0 0 / 20%);
+  }
+
+  &:nth-child(even) {
+    background: rgb(255 255 255 / 8%);
+  }
+}
+
+.testimonialContent {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.testimonialImage {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid $white;
+  margin-bottom: 0.6rem;
+}
+
+.clientName {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: $white;
+  margin: 0 0 0.5rem;
+}
+
+.testimonialText {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: rgb(255 255 255 / 80%);
+  font-style: italic;
+  margin: 0;
+  white-space: pre-line;
+}
+
+// Animation for the horizontal scroll
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+// Add a second row animation in reverse direction
+.testimonialRow:nth-child(even) {
+  animation-direction: reverse;
+  margin-left: -100px;
+}
+
+// Responsive adjustments
+@media (width <= 768px) {
+  .testimonialCard {
+    width: 180px;
+  }
+
+  .clientName {
+    font-size: 0.8rem;
+  }
+
+  .testimonialText {
+    font-size: 0.7rem;
+  }
+}

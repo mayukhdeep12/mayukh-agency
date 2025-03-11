@@ -3,9 +3,9 @@ import { cache } from 'react';
 // Sample data to replace Contentful API calls
 const sampleProjects = [
   {
-    name: 'Designing',
+    name: 'Website',
     slug: 'designing',
-    tags: ['Website Design', 'Website Development', '3D Design'],
+    tags: ['Website Design', 'Website Development', 'Search Engines'],
     image: {
       src: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/e9681e37a42424a5ffd1833b7f34d87f.jpg?v=1732823655358',
       alt: 'Project 1 Image'
@@ -21,9 +21,9 @@ const sampleProjects = [
     }
   },
   {
-    name: 'Generative AI',
+    name: 'AgenticAI',
     slug: 'generative-ai',
-    tags: ['Large • Image • Video • Language • Models'],
+    tags: ['Conversational AI', 'AI Automation', 'Generative AI'],
     image: {
       src: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/1b446e9ae1552e26b9f0be8125c8fadf.jpg?v=17328237174589',
       alt: 'Project 2 Image'
@@ -39,7 +39,7 @@ const sampleProjects = [
     }
   },
   {
-    name: 'XR Apps',
+    name: 'Immersive',
     slug: 'xr-experiences',
     tags: ['Augmented Reality', 'Virtual Reality'],
     image: {

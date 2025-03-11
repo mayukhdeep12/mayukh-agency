@@ -14,94 +14,90 @@ import Review from './components/Skills';
 const sampleContent = {
   review: [
     {
-      name: 'John Smith',
-      text: 'Excellent work that exceeded our expectations. Highly recommended!',
-      image: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/1.jpg?v=1733139268531'
+      name: 'John Doe, General Manager',
+      text: 'Mazzerx AI bot boosted our guest satisfaction. It’s efficient and easy to use—our team loves it!',
+      image: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/3.jpg?v=1733139269378',
+      country:
+        'https://cdn.britannica.com/79/4479-050-6EF87027/flag-Stars-and-Stripes-May-1-1795.jpg'
     },
     {
-      name: 'Sarah Johnson',
-      text: 'Awesome work with incredible results. Will definitely hire again.',
-      image: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/3.jpg?v=1733139269378'
+      name: 'Lisa Carter, Owner',
+      text: 'Mazzerx built us a stunning website with an AI bot, It helps clients plan trips effortlessly and saves us time.',
+      image: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/1.jpg?v=1733139268531',
+      country: 'https://cdn.britannica.com/25/4825-050-977D8C5E/Flag-United-Kingdom.jpg'
     },
     {
-      name: 'Michael Chen',
-      text: 'Very well done with great attention to detail. Absolutely professional.',
-      image: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/4.jpg?v=1733139268326'
+      name: 'Jane Smith, IT Manager',
+      text: 'The AI bot handles inquiries 24/7. It’s reduced our workload and impressed our guests!',
+      image: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/2.jpg?v=1733139271595',
+      country:
+        'https://cdn.britannica.com/79/4479-050-6EF87027/flag-Stars-and-Stripes-May-1-1795.jpg'
     },
     {
-      name: 'Emily Taylor',
-      text: 'Stunning design and flawless execution. Exactly what we needed.',
-      image: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/2.jpg?v=1733139271595'
+      name: 'Dr. Emily Johnson, CEO',
+      text: 'Amazing work Mazzerx it detects ailments accurately and sets appointments fast. It’s a game-changer for us.',
+      image:
+        'https://cdn.glitch.global/f85b9cad-76d1-4a2c-85f9-10087647d4de/generate-a-female-person-ultra-realistic-image.jpg?v=1740756037246',
+      country:
+        'https://cdn.glitch.global/f85b9cad-76d1-4a2c-85f9-10087647d4de/images%20(1).png?v=1741715000285'
     },
     {
-      name: 'David Wong',
-      text: 'Innovative approach to problem solving. Creative and efficient.',
-      image: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/7.jpg?v=1733139275056'
+      name: 'Dr. Sarah Patel, Dermatologist',
+      text: 'lifesaver for busy days. It’s spot-on and helps us care better.',
+      image: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/5.jpg?v=1733139272968',
+      country:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1200px-Flag_of_India.svg.png'
     },
     {
-      name: 'Jessica Martinez',
-      text: 'Truly impressive work delivered on time. A pleasure to work with.',
-      image: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/5.jpg?v=1733139272968'
+      name: 'David Lee, Founder',
+      text: 'Mazzerx created an amazing website for us, Customers love customizing their cars right on the page.',
+      image:
+        'https://cdn.glitch.global/f85b9cad-76d1-4a2c-85f9-10087647d4de/generate-a-male-asian-person-ultra-realistic-image.jpg?v=1740756034502',
+      country:
+        'https://cdn.britannica.com/79/4479-050-6EF87027/flag-Stars-and-Stripes-May-1-1795.jpg'
     },
     {
-      name: 'Robert Kim',
-      text: 'Great job, team! Would hire again for all our future projects.',
-      image: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/1.jpg?v=1733139268531'
+      name: 'John Doe, General Manager',
+      text: 'Mazzerx AI bot boosted our guest satisfaction. It’s efficient and easy to use—our team loves it!',
+      image: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/3.jpg?v=1733139269378',
+      country:
+        'https://cdn.britannica.com/79/4479-050-6EF87027/flag-Stars-and-Stripes-May-1-1795.jpg'
     },
     {
-      name: 'Amanda Lewis',
-      text: "Perfectly executed plan with amazing results. Couldn't be happier.",
-      image: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/2.jpg?v=1733139271595'
+      name: 'Lisa Carter, Owner',
+      text: 'Mazzerx built us a stunning website with an AI bot, It helps clients plan trips effortlessly and saves us time.',
+      image: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/1.jpg?v=1733139268531',
+      country: 'https://cdn.britannica.com/25/4825-050-977D8C5E/Flag-United-Kingdom.jpg'
     },
     {
-      name: 'Thomas Wilson',
-      text: 'Very satisfied with all aspects of work. Professional and responsive.',
-      image: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/6.jpg?v=1733139270080'
+      name: 'Jane Smith, IT Manager',
+      text: 'The AI bot handles inquiries 24/7. It’s reduced our workload and impressed our guests!',
+      image: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/2.jpg?v=1733139271595',
+      country:
+        'https://cdn.britannica.com/79/4479-050-6EF87027/flag-Stars-and-Stripes-May-1-1795.jpg'
     },
     {
-      name: 'Lisa Garcia',
-      text: 'Excellent communication and project management. Always on schedule.',
-      image: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/4.jpg?v=1733139268326'
+      name: 'Dr. Emily Johnson, CEO',
+      text: 'Amazing work Mazzerx it detects ailments accurately and sets appointments fast. It’s a game-changer for us.',
+      image:
+        'https://cdn.glitch.global/f85b9cad-76d1-4a2c-85f9-10087647d4de/generate-a-female-person-ultra-realistic-image.jpg?v=1740756037246',
+      country:
+        'https://cdn.glitch.global/f85b9cad-76d1-4a2c-85f9-10087647d4de/images%20(1).png?v=1741715000285'
     },
     {
-      name: 'James Brown',
-      text: 'Stunning visuals and great functionality. Modern and user-friendly.',
-      image: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/3.jpg?v=1733139269378'
+      name: 'Dr. Sarah Patel, Dermatologist',
+      text: 'lifesaver for busy days. It’s spot-on and helps us care better.',
+      image: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/5.jpg?v=1733139272968',
+      country:
+        'https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1200px-Flag_of_India.svg.png'
     },
     {
-      name: 'Sophia Lee',
-      text: 'Innovative solutions to complex challenges. Smart and efficient work.',
-      image: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/6.jpg?v=1733139270080'
-    },
-    {
-      name: 'Daniel Miller',
-      text: 'Immersive experience and intuitive design. Really impressed our team.',
-      image: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/1.jpg?v=1733139268531'
-    },
-    {
-      name: 'Olivia Scott',
-      text: 'Visionary approach to modern problems. Ahead of the competition.',
-      image: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/5.jpg?v=1733139272968'
-    },
-    {
-      name: 'Ryan Patel',
-      text: 'Truly impressive team working seamlessly. Great collaboration.',
-      image: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/7.jpg?v=1733139275056'
-    },
-    {
-      name: 'Emma Rodriguez',
-      text: 'Very satisfied client returning for more. That says it all!',
-      image: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/2.jpg?v=1733139271595'
-    },
-    {
-      name: 'Kevin White',
-      text: 'Robust solutions with long-term stability. Built to last.',
-      image: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/4.jpg?v=1733139268326'
-    },
-    {
-      name: 'Natalie Clark',
-      text: 'Great job on all aspects of the project. Highly professional service.',
-      image: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/1.jpg?v=1733139268531'
+      name: 'David Lee, Founder',
+      text: 'Mazzerx created an amazing website for us, Customers love customizing their cars right on the page.',
+      image:
+        'https://cdn.glitch.global/f85b9cad-76d1-4a2c-85f9-10087647d4de/generate-a-male-asian-person-ultra-realistic-image.jpg?v=1740756034502',
+      country:
+        'https://cdn.britannica.com/79/4479-050-6EF87027/flag-Stars-and-Stripes-May-1-1795.jpg'
     }
   ],
 

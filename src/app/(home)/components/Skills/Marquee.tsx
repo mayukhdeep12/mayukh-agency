@@ -7,7 +7,14 @@ import { useMarqueeAnimation } from './Marquee.anime';
 import styles from './Skills.module.scss';
 
 interface MarqueeProps {
-  review: Array<Array<{ text: string; image: string; name?: string }>>;
+  review: Array<
+    Array<{
+      text: string;
+      image: string;
+      name?: string;
+      country?: string; // Country image URL
+    }>
+  >;
 }
 
 const Marquee = memo(function Marquee({ review }: MarqueeProps) {
@@ -25,12 +32,28 @@ const Marquee = memo(function Marquee({ review }: MarqueeProps) {
 });
 
 interface TestimonialRowProps {
-  row: Array<{ text: string; image: string; name?: string }>;
+  row: Array<{
+    text: string;
+    image: string;
+    name?: string;
+    country?: string; // Country image URL
+  }>;
 }
 
 const TestimonialRow = memo(function TestimonialRow({ row }: TestimonialRowProps) {
   return [...row, ...row].map((item, index) => (
     <div key={index} className={styles.testimonialCard}>
+      {item.country && (
+        <div className={styles.countryIconWrapper}>
+          <Image
+            src={item.country}
+            alt='Country flag'
+            className={styles.countryIcon}
+            width={24}
+            height={24}
+          />
+        </div>
+      )}
       <div className={styles.testimonialContent}>
         <Image
           src={item.image}

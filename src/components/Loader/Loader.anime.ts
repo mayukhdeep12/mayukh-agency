@@ -24,11 +24,12 @@ export const useLoaderAnime = () => {
           duration: 0.75,
           scale: 0.001,
           rotate: 10,
-          yPercent: matchMedia('(max-width: 1024px)').matches ? 50 : 100,
+          yPercent: 0, // Changed from responsive value to 0
+          xPercent: 0, // Added xPercent to ensure centered origin
           ease: 'power1.inOut',
           stagger: {
             amount: 2,
-            from: 'end',
+            from: 'center', // Changed from 'end' to 'center'
             grid: [7, 7],
             yoyo: true,
             repeat: 3

@@ -10,7 +10,7 @@ const START_TIMER = 5000;
 const HIDE_TIMER = 20000;
 
 const Toast = ({
-  text = "Let's Connect",
+  text = 'Book a Call',
   websiteUrl = 'https://calendly.com/mayukhdeepm/15-minute-meeting-clone'
 }: {
   text?: string;

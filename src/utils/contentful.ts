@@ -3,27 +3,37 @@ import { cache } from 'react';
 // Sample data to replace Contentful API calls
 const sampleProjects = [
   {
-    name: 'Website',
+    name: 'Web-Solutions',
     slug: 'designing',
     tags: ['Website Design', 'Website Development', 'Search Engines'],
     image: {
-      src: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/e9681e37a42424a5ffd1833b7f34d87f.jpg?v=1732823655358',
+      src: 'https://cdn.glitch.global/46879755-384b-458c-8e34-44441dca5e88/Generated%20Image%20March%2028%2C%202025%20-%2011_11PM.jpeg?v=1743185372268',
       alt: 'Project 1 Image'
     },
     detailedContent: {
       sections: [
         {
-          subheading: 'Description',
+          subheading: 'Website Design',
           paragraph:
-            "Our company is at the forefront of digital innovation, offering comprehensive solutions in web design, web development, and cutting-edge 3D website development. With a team of skilled professionals who are well-versed in the latest technologies and trends, we deliver tailored solutions that elevate your online presence. Our web design services focus on creating visually appealing and user-friendly interfaces that reflect your brand's uniqueness and enhance user engagement. In web development, we build robust and scalable platforms that drive functionality and performance, ensuring your website operates efficiently and meets your business needs. Moreover, our 3D website development capabilities allow us to bring immersive and interactive experiences to your users, setting you apart in the digital landscape. By leveraging trending tools and staying ahead of industry advancements, we ensure that our solutions are not only innovative but also future-proof, positioning your business for sustained success in the dynamic world of digital technology."
+            'Our website design services focus on creating visually stunning, user-friendly, and brand-aligned interfaces that enhance user engagement and retention. By leveraging modern design principles, we ensure an intuitive and seamless user experience across all devices.'
+        },
+        {
+          subheading: 'Website Development',
+          paragraph:
+            'We specialize in developing robust and scalable websites that offer optimal performance and security. Our web development solutions incorporate the latest technologies to ensure seamless functionality and business growth.'
+        },
+        {
+          subheading: 'Search Engines',
+          paragraph:
+            'Enhancing search engine visibility is crucial for business success. We implement best SEO practices, structured data, and content optimization to improve rankings and drive organic traffic.'
         }
       ]
     }
   },
   {
-    name: 'AgenticAI',
+    name: 'AI-Solutions',
     slug: 'generative-ai',
-    tags: ['Conversational AI', 'AI Automation', 'Generative AI'],
+    tags: ['Conversational AI', 'Speech AI', 'Generative AI'],
     image: {
       src: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/1b446e9ae1552e26b9f0be8125c8fadf.jpg?v=17328237174589',
       alt: 'Project 2 Image'
@@ -31,27 +41,47 @@ const sampleProjects = [
     detailedContent: {
       sections: [
         {
-          subheading: 'Description',
+          subheading: 'Conversational AI',
           paragraph:
-            'our company excels in developing cutting-edge Large Language Models (LLMs), video models, speech models, recognition models, and hardware robotic models. By leveraging the latest technological advancements and working with the most trending tools in the industry, our team is dedicated to delivering innovative and efficient solutions that cater to a wide range of applications and use cases. With a strong focus on research and development, we continuously push the boundaries of what is possible in the field of artificial intelligence, ensuring that our clients have access to the most advanced and effective tools available.'
+            'Our Conversational AI solutions enhance customer interactions through intelligent chatbots and virtual assistants. These AI-driven systems enable natural conversations, improving user experience and operational efficiency.'
+        },
+        {
+          subheading: 'Speech AI',
+          paragraph:
+            'With advanced Speech AI technologies, we offer real-time speech recognition, voice synthesis, and multilingual support, enabling seamless communication across different industries and platforms.'
+        },
+        {
+          subheading: 'Generative AI',
+          paragraph:
+            'Our Generative AI solutions empower businesses with content generation, image synthesis, and video AI capabilities, revolutionizing creativity and automation in various sectors.'
         }
       ]
     }
   },
   {
-    name: 'Immersive',
+    name: 'Immersive-Apps',
     slug: 'xr-experiences',
-    tags: ['Augmented Reality', 'Virtual Reality'],
+    tags: ['Augmented Reality', 'Virtual Reality', 'XR Experiences'],
     image: {
-      src: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/Close-Up%20Of%20Hand%20Holding%20Smartphone%20Displaying%20AR%20Armchair.png?v=1733598400164',
-      alt: 'Project 2 Image'
+      src: 'https://cdn.glitch.global/46879755-384b-458c-8e34-44441dca5e88/image.jpg?v=1743185567106',
+      alt: 'Project 3 Image'
     },
     detailedContent: {
       sections: [
         {
-          subheading: 'Description',
+          subheading: 'Augmented Reality',
           paragraph:
-            "our company is at the forefront of immersive technology, leveraging cutting-edge tools and platforms to create unparalleled experiences for our clients. Our AR offerings seamlessly blend digital elements with the real world, enhancing user interaction and providing valuable information in context, while our VR solutions transport users to entirely new environments, fostering engagement and innovation. With a deep understanding of the latest trends and a commitment to pushing the boundaries of what's possible, our team delivers tailored, high-impact AR and VR experiences that drive business success and captivate audiences."
+            'Our AR solutions blend the digital and physical worlds to create engaging and interactive user experiences. We develop AR applications for retail, training, and entertainment, enhancing user immersion.'
+        },
+        {
+          subheading: 'Virtual Reality',
+          paragraph:
+            'We build VR environments that transport users into fully immersive digital spaces, enabling industries like gaming, education, and real estate to offer captivating and realistic experiences.'
+        },
+        {
+          subheading: 'XR Experiences',
+          paragraph:
+            'Extended Reality (XR) encompasses AR, VR, and MR solutions that redefine interaction and engagement. Our expertise in XR development pushes the boundaries of innovation and storytelling.'
         }
       ]
     }
@@ -59,17 +89,27 @@ const sampleProjects = [
   {
     name: 'MedTech',
     slug: 'med-tech',
-    tags: ['Computer Vision', 'Radiological Tools'],
+    tags: ['Medical Imaging', 'AI Solutions', 'Medical Devices'],
     image: {
-      src: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/Futuristic%20Medical%20Scene%20With%20Augmented%20Reality%20Interactions.png?v=1733598397585',
-      alt: 'Project 2 Image'
+      src: 'https://cdn.glitch.global/46879755-384b-458c-8e34-44441dca5e88/geergeeg.jpg?v=1743185807587',
+      alt: 'Project 4 Image'
     },
     detailedContent: {
       sections: [
         {
-          subheading: 'Description',
+          subheading: 'Medical Imaging',
           paragraph:
-            'Our company is at the forefront of leveraging advanced computer vision technologies to revolutionize radiological tools in the medtech industry. With a team of experts deeply versed in artificial intelligence and machine learning, we develop innovative solutions that enhance diagnostic accuracy, streamline workflows, and improve patient outcomes. Our cutting-edge tools are designed to interpret complex medical images with precision, assisting healthcare professionals in making informed decisions. By integrating the latest trends and advancements in technology, we ensure that our solutions not only meet but exceed industry standards, providing unparalleled value to our clients.'
+            'We revolutionize medical imaging by leveraging AI-driven analysis and enhancement techniques. Our solutions assist radiologists in detecting anomalies and improving diagnostic accuracy.'
+        },
+        {
+          subheading: 'AI Solutions',
+          paragraph:
+            'Our AI-powered healthcare tools streamline workflows, enhance decision-making, and optimize patient care through predictive analytics and automation.'
+        },
+        {
+          subheading: 'Medical Devices',
+          paragraph:
+            'We integrate AI capabilities into medical devices, enhancing their precision and efficiency. Our innovations contribute to improved healthcare delivery and patient outcomes.'
         }
       ]
     }

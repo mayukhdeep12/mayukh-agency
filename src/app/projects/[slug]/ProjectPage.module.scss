@@ -1,91 +1,216 @@
-@use '@/base' as *;
+// --- Variables (Assume these match your site's template) ---
+// Example values - replace with your actual template variables
+$primary-color: #0a68f0; // Your site's primary color
+$secondary-color: #5a6e8a; // Muted secondary color
+$text-color: #e0e0e0; // **IMPORTANT: Use a text color readable on your SITE's background** (assuming dark)
+$text-color-light: #b0b0b0; // Lighter text for paragraphs (adjust for readability)
+$heading-color: #fff; // Often white or slightly off-white for headings on dark bg
+$light-text-color: #fff; // Text for hero overlay
+$border-color: rgb(255 255 255 / 15%); // Subtle border for cards on dark bg
+$card-background-tint: rgb(255 255 255 / 3%); // Very subtle background tint for cards (optional)
+$border-radius: 12px; // Slightly larger radius
+$transition-speed: 0.3s ease-in-out;
+$content-max-width: 1140px;
 
+// --- Base Page Style ---
 .project_page {
-  $size: clamp(1.2rem, 3.4vi, 2rem);
+  width: 100%;
+  padding-bottom: 6rem; // More breathing room at the bottom
+  // NO background-color here - will inherit from body/layout
+}
 
-  padding-top: $container-margin;
-  @include container;
+// --- Hero Section ---
+// (Keep styles mostly the same as before, ensure text contrast)
+.hero_section {
+  position: relative;
+  width: 100%;
+  height: 50vh; // Adjust as needed
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $light-text-color; // Text color over the image overlay
+  margin-bottom: 4rem;
+  overflow: hidden;
 
-  h1 {
-    font-size: clamp(4rem, 12.5vi, 15rem);
-    text-shadow: 0 0 0.7rem $black;
-    text-align: center;
+  @media (width <= 768px) {
+    height: 45vh;
+    margin-bottom: 3rem;
   }
+}
+
+.hero_image_wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  // Keep or adjust the overlay for text readability
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgb(0 0 0 / 80%) 0%,
+      rgb(0 0 0 / 20%) 70%
+    ); // Adjust gradient
+    z-index: 2;
+  }
+}
+
+.hero_image {
+  object-fit: cover;
+  object-position: center center;
+  filter: brightness(0.9); // Adjust brightness if needed
+}
+
+.hero_content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 1rem 2rem;
+}
+
+.project_title {
+  font-size: clamp(2.8rem, 7vw, 4.5rem); // Adjust size as needed
+  font-weight: 700; // Or use your template's heading weight
+  line-height: 1.2;
+  color: $light-text-color;
+  text-shadow: 1px 1px 5px rgb(0 0 0 / 50%); // Ensure readability
+}
+
+// --- Tags Section ---
+.tags_section {
+  max-width: $content-max-width;
+  margin: 0 auto 4rem;
+  padding: 0 1.5rem;
 
   h2 {
-    font-size: clamp(1.5rem, 7vi, 6rem);
-    letter-spacing: clamp(0.2rem, 1vi, 1rem);
+    font-size: 1.4rem; // Slightly smaller, more modern subtitle size
+    font-weight: 600; // Adjust weight per template
+    color: $text-color; // Use readable text color
+    text-align: center;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px; // More spacing for uppercase titles
+    opacity: 0.8; // Slightly less emphasis than main headings
   }
+}
 
-  > p {
-    line-height: 1.5;
-    font-weight: 300;
-    font-size: $size;
-    margin-block: $size;
+.tags_list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem 1rem;
+}
+
+.tag_item {
+  display: inline-block;
+
+  // Style for tags on transparent background - border is key
+  background-color: rgb(255 255 255 / 5%); // Very subtle background
+  color: $text-color-light; // Readable text
+  padding: 0.6em 1.3em;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid $border-color; // Use the defined subtle border
+  transition: all $transition-speed;
+  cursor: default;
+
+  &:hover {
+    background-color: rgba($primary-color, 0.8); // Use primary color with slight transparency
+    color: $light-text-color; // Light text on hover
+    border-color: transparent; // Hide border when bg color is strong
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 4px 15px rgba($primary-color, 0.2); // Subtle glow effect
   }
+}
 
-  figure {
+// --- Details Section (Main Content) ---
+.details_section {
+  max-width: $content-max-width;
+  margin: 0 auto;
+  padding: 0 1.5rem; // Consistent padding
+
+  h2 {
+    font-size: clamp(1.8rem, 5vw, 2.5rem); // Responsive heading size
+    font-weight: 700; // Template heading weight
+    color: $heading-color; // Use heading color readable on background
+    text-align: center;
+    margin-bottom: 3rem;
     position: relative;
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    border-radius: 0.4rem;
-    box-shadow: 0 0 1rem $black;
 
-    img {
-      object-fit: cover;
-      border-radius: inherit;
-    }
-  }
-
-  ol {
-    margin-left: clamp(3rem, 7vi, 4rem);
-
-    li {
-      margin-block: $size;
-      list-style: decimal-leading-zero;
-      font-size: $size;
-      line-height: 1.5;
-
-      &::marker {
-        font-size: 0.9em;
-      }
-
-      h3 {
-        font-weight: 600;
-        font-size: 1em;
-      }
-
-      p {
-        font-weight: 300;
-        font-size: 0.9em;
-      }
-    }
-  }
-
-  ul.tags {
-    @include flexbox($jusCon: space-evenly, $wrap: wrap);
-
-    margin: clamp(0.4rem, 1.3vi, 1rem);
-
-    li {
-      padding: 0.2rem 0.8rem;
-      margin: 0.2rem;
-      @include blurbg(10%, 0.5rem, $white);
-
-      font-size: clamp(0.8rem, 2.5vi, 1.2rem);
-      border-radius: 0.4rem;
-      box-shadow: 2px 2px 5px rgba($black, 25%);
-    }
-  }
-
-  .links {
-    @include flexbox($jusCon: space-evenly, $gap: 0.5rem);
-
-    margin-block: $size;
-
-    a {
-      font-size: clamp(1rem, 3vi, 1.5rem);
-      text-decoration: underline;
+    // Underline matching primary color - adjust thickness/width per template
+    &::after {
+      content: '';
+      display: block;
+      width: 70px;
+      height: 3px;
+      background-color: $primary-color;
+      margin: 0.75rem auto 0;
+      border-radius: 2px;
     }
   }
 }
+
+.detailed_content_grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, 300px), 1fr)
+  ); // Adjust min width if needed
+  gap: 2rem; // Spacing between cards
+}
+
+// --- Service Detail Card Styling ---
+.section_card {
+  // NO solid background-color
+  // background-color: $card-background-tint; // OPTIONAL: Add very subtle tint if needed for separation
+  border-radius: $border-radius;
+  padding: 2rem 2.5rem; // Adjust padding
+  border: 1px solid $border-color; // Use subtle border defined above
+  box-shadow: 0 4px 20px rgb(0 0 0 / 10%); // Subtle shadow for depth (adjust darkness/spread)
+  transition:
+    transform $transition-speed,
+    box-shadow $transition-speed,
+    border-color $transition-speed;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-6px); // Slightly more lift on hover
+    border-color: rgba($primary-color, 0.7); // Highlight border with primary color on hover
+    box-shadow: 0 8px 30px rgb(0 0 0 / 15%); // Enhance shadow on hover
+    // background-color: rgba(255, 255, 255, 0.05); // Optional: Slightly increase tint on hover
+  }
+
+  @media (width <= 576px) {
+    padding: 1.5rem; // Less padding on small screens
+  }
+}
+
+.section_subheading {
+  font-size: 1.3rem; // Adjust per template hierarchy
+  font-weight: 600; // Template subheading weight
+  color: $primary-color; // Use primary color for emphasis
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.section_paragraph {
+  font-size: 1rem; // Base paragraph size
+  line-height: 1.75; // Generous line height for readability
+  color: $text-color-light; // ** Use the lighter text color defined above **
+  opacity: 0.9; // Slightly reduced opacity for paragraphs
+  margin-bottom: 0;
+
+  @media (width <= 768px) {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+}
+
+// --- Responsive Adjustments ---
+// Keep or adjust existing media queries as needed for overall layout
+// The grid and card styles are already somewhat responsive

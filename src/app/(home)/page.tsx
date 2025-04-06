@@ -42,7 +42,7 @@ const sampleContent = {
         'https://cdn.glitch.global/f85b9cad-76d1-4a2c-85f9-10087647d4de/images%20(1).png?v=1741715000285'
     },
     {
-      name: 'Dr. Sarah Patel, Dermatologist',
+      name: 'Dr. Suraj Patel, Dermatologist',
       text: 'lifesaver for busy days. It’s spot-on and helps us care better.',
       image: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/5.jpg?v=1733139272968',
       country:
@@ -85,7 +85,7 @@ const sampleContent = {
         'https://cdn.glitch.global/f85b9cad-76d1-4a2c-85f9-10087647d4de/images%20(1).png?v=1741715000285'
     },
     {
-      name: 'Dr. Sarah Patel, Dermatologist',
+      name: 'Dr. Suraj Patel, Dermatologist',
       text: 'lifesaver for busy days. It’s spot-on and helps us care better.',
       image: 'https://cdn.glitch.global/4c8c9e0a-aad7-4257-aedf-2cd32b466477/5.jpg?v=1733139272968',
       country:
@@ -106,7 +106,7 @@ const sampleContent = {
   contactLinks: {
     Email: [
       {
-        label: 'mazzerx.connect@gmail.com',
+        label: 'connect@mazzerx.com',
         href: 'mailto:mazzerx.connect@gmail.com',
         value: 'mazzerx.connect@gmail.com'
       }

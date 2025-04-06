@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react';
 
-import { type MousePosition } from '@/types';
+// Define the MousePosition type directly in this file
+export interface MousePosition {
+  x: number | undefined;
+  y: number | undefined;
+}
 
 /**
- * Custom hook to find the position of the cusror or touch
+ * Custom hook to find the position of the cursor or touch
  */
 export const useMousePosition = (): MousePosition => {
   const [mousePosition, setMousePosition] = useState<MousePosition>({

@@ -1,63 +1,42 @@
-import type { EntryFieldTypes, EntrySkeletonType } from 'contentful';
-
-export interface MousePosition {
-  x?: number;
-  y?: number;
+// Define the structure for the image object
+export interface ImageObject {
+  src: string;
+  alt: string;
+  base64: string; // For blur placeholder
 }
 
-export interface TransitionContextProps {
-  isPending: boolean;
-  pageEnter: () => Promise<void>;
-  pageExit: (href: string) => Promise<void>;
+// Define the structure for a section within detailedContent
+export interface DetailedContentSection {
+  subheading: string;
+  paragraph: string;
+  // image?: ImageObject; // Uncomment if sections can have images
 }
 
-// Contentful types
-
-// Content Types (About | Skills | Links)
-export type LinkObject = {
-  label: string;
-  value: string;
-};
-export interface Content {
-  name?: EntryFieldTypes.Symbol;
-  about?: EntryFieldTypes.Text;
-  review?: EntryFieldTypes.Array<EntryFieldTypes.Symbol>;
-  navLinks: EntryFieldTypes.Object<{ data: string[] }>;
-  contacts: EntryFieldTypes.Object<{ [key: string]: LinkObject[] }>;
-  otherLinks: EntryFieldTypes.Object<{ spotify: string }>;
+// Define the structure for the detailed content
+export interface DetailedContent {
+  sections: DetailedContentSection[];
 }
 
-export type ContentSkeleton = EntrySkeletonType<Content, 'content'>;
-
-// Projects Types
-export interface ProjectCards {
-  index: EntryFieldTypes.Integer;
-  name: EntryFieldTypes.Symbol;
-  slug: EntryFieldTypes.Symbol;
-  image?: EntryFieldTypes.AssetLink;
-  tags?: EntryFieldTypes.Array<EntryFieldTypes.Symbol>;
-}
-
-export interface Project extends ProjectCards {
-  mdx?: EntryFieldTypes.Text;
-  github?: EntryFieldTypes.Symbol;
-  live?: EntryFieldTypes.Symbol;
-}
-
-export type ProjectsSkeleton = EntrySkeletonType<ProjectCards, 'projects'>;
-
-export type ProjectSkeleton = EntrySkeletonType<Project, 'projects'>;
-
+// Define the main structure for a Project/Service
 export interface ProjectProperties {
   name: string;
   slug: string;
-  tags?: string[];
-  image: {
-    src: string;
-    alt?: string;
-    base64?: string;
-  };
-  mdx?: string;
-  github?: string;
-  live?: string;
+  tags: string[];
+  image: ImageObject;
+  detailedContent: DetailedContent;
+  // Optional fields you might have:
+  // index?: number; // For ordering
+  // mdx?: string; // If you were using MDX content
+  // publishedDate?: string; // ISO date string
+  // updatedDate?: string; // ISO date string
+  // shortDescription?: string; // For list views
+}
+
+// You might have other types here, e.g., for Content fetched from getContent
+export interface ContentData {
+  about: string[];
+  review: string[]; // Assuming 'review' meant skills or testimonials
+  navLinks: Record<string, string>;
+  contactLinks: Record<string, string>;
+  otherLinks: Record<string, string>;
 }

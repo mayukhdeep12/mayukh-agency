@@ -5,8 +5,14 @@ import { ReactNode, createContext, useContext, useState } from 'react';
 
 import { useLenis } from '@studio-freight/react-lenis';
 
-import { TransitionContextProps } from '@/types';
 import { gsap, useGSAP } from '@/utils/gsap';
+
+// Define the TransitionContextProps interface directly in this file
+export interface TransitionContextProps {
+  isPending: boolean;
+  pageEnter: () => Promise<void>;
+  pageExit: (href: string) => Promise<void>;
+}
 
 const TransitionContext = createContext<TransitionContextProps | null>(null);
 

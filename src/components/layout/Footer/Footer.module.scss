@@ -1,20 +1,87 @@
-@use '@/base' as *;
+@use '@/base' as *; // Assuming this imports your mixins and variables
 
 .footer {
   @include container;
-  @include flexbox($dir: row, $jusCon: space-between);
+  @include flexbox(
+    $dir: row,
+    // Horizontal layout on desktop
+    $jusCon: space-between,
+    // Push copyright left, links right
+    $alignItem: center // Vertically align items if they have different heights
+  );
 
+  flex-wrap: wrap; // Allow wrapping if space is extremely tight even on desktop
   padding-block: clamp(1rem, 2vi, 2rem) 2rem;
   border-top: 1px solid rgba($white, 0.8);
   margin-top: $container-margin;
 
+  // General styles applied to both p and a within the footer
   p,
   a {
     font-size: clamp(0.7rem, 3.5vi, 1rem);
     text-transform: capitalize;
+    color: inherit; // Inherit color from footer unless overridden
+    text-decoration: none; // Base style, can be overridden for links
   }
 
-  @include device(tablet) {
-    @include flexbox($dir: column, $alignItem: center, $gap: 1rem);
+  // Specific style for links (e.g., add underline on hover)
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
   }
+
+  // Container for the group of links on the right
+  .linksContainer {
+    @include flexbox(
+      $dir: row,
+      // Arrange links horizontally
+      $alignItem: center,
+      // Align links vertically within their container
+      $gap: clamp(0.8rem, 2vi, 1.5rem) // Space between links
+    );
+
+    flex-wrap: wrap; // Allow links to wrap within their container if needed
+  }
+
+  // Responsive adjustments for tablet and smaller
+  @include device(tablet) {
+    // Change footer direction to vertical and center items
+    @include flexbox(
+      $dir: column,
+      $alignItem: center,
+      $gap: 1rem
+    ); // Stack copyright and linksContainer vertically with space
+
+    .copyright {
+      text-align: center; // Ensure copyright text is centered when stacked
+    }
+
+    // Adjust the links container for stacked layout
+    .linksContainer {
+      @include flexbox(
+        $dir: column,
+        // Stack links vertically
+        $alignItem: center,
+        // Center links horizontally
+        $gap: 0.5rem // Reduce gap for vertical stacking
+      );
+
+      width: 100%; // Allow centering within the column layout
+      text-align: center; // Center text within links if needed
+    }
+  }
+
+  // Optional: Specific styles for mobile if needed (example)
+  // @include device(mobile) {
+  //   .linksContainer {
+  //     gap: 0.4rem; // Further adjust gap for very small screens
+  //   }
+  // }
 }
+
+// Ensure your Link component doesn't add extra margins that interfere
+// If using standard <a> tags, reset margin:
+// .footer a {
+//   margin: 0;
+// }
